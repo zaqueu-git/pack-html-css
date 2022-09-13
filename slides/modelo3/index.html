@@ -1,0 +1,89 @@
+
+<link rel='stylesheet' href='owl.carousel.css'>
+<link rel='stylesheet' href='owl.transitions.css'>
+<link rel='stylesheet' href='owl.theme.css'>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.owl-carousel {
+  list-style: none;
+  padding: 0;
+}
+
+.owl-item:nth-child(2n) {
+  background: #bd0000;
+}
+
+.owl-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.owl-pagination {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    width: 30px;
+    margin-top: -30px;    
+}
+
+.owl-scrool {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.owl-scrool a {
+    margin-top: -70px;
+    position: absolute;
+    text-decoration: none;
+    display: inline-block;
+    width: 0; 
+    height: 0; 
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #ffffff;
+}
+</style>
+
+<div class="wrapper">
+	<ul class="owl-carousel">
+		<li><img src="imagens/img1.png" alt=""></li>
+		<li><img src="imagens/img2.jpg" alt=""></li>
+		<li><img src="imagens/img1.png" alt=""></li>
+		<li><img src="imagens/img2.jpg" alt=""></li>
+	</ul>
+    <p class="owl-scrool">
+        <a href="" data-jcarouselcontrol="true"></a>
+    </p>
+</div>
+
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='owl.carousel.js'></script>
+  
+<script id="rendered-js" >
+$(document).ready(function () {
+
+	$(".owl-carousel").owlCarousel({
+		items: 1,
+		singleItem: true,
+		itemsScaleUp: true,
+		slideSpeed: 1000,
+		autoPlay: 5000,
+		stopOnHover: true,
+		autoHeight:true
+	});
+
+});
+</script>
+ 

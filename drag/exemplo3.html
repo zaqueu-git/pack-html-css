@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Drag</title>
+
+<style type="text/css">
+#lista {margin-bottom: 1em;}
+#lista li, #buttons li {margin-bottom: 0px;margin-top: 4px;}
+ul.boxy {list-style-type: none;padding: 0px;margin: 0px;width: 10em;font-size: 13px;font-family: Arial, sans-serif;}
+ul.boxy li {cursor:move;padding: 2px 2px;border: 1px solid #ccc;background-color: #eee;}
+</style>
+
+<script language="JavaScript" type="text/javascript" src="js/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/events.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/css.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/coordinates.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/drag.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/dragsort.js"></script>
+<script language="JavaScript" type="text/javascript" src="js/cookies.js"></script>
+
+<script language="JavaScript" type="text/javascript"><!--
+	var dragsort = ToolMan.dragsort()
+	var junkdrawer = ToolMan.junkdrawer()
+
+	window.onload = function() {
+		junkdrawer.restoreListOrder("lista")
+
+		dragsort.makeListSortable(document.getElementById("lista"),
+				verticalOnly, saveOrder)
+	}
+
+	function verticalOnly(item) {
+		item.toolManDragGroup.verticalOnly()
+	}
+
+	function speak(id, what) {
+		var element = document.getElementById(id);
+		element.innerHTML = 'Clicked ' + what;
+	}
+
+	function saveOrder(item) {
+		var group = item.toolManDragGroup
+		var list = group.element.parentNode
+		var id = list.getAttribute("id")
+		if (id == null) return
+		group.register('dragend', function() {
+			ToolMan.cookies().set("list-" + id, 
+					junkdrawer.serializeList(list), 365)
+		})
+	}
+
+	//-->
+</script>
+
+
+</head>
+<body>
+
+
+<ul id="lista" class="boxy">
+	<li itemID="a">alpha</li>
+	<li itemID="b">bravo</li>
+	<li itemID="c">charlie</li>
+	<li itemID="d">delta</li>
+	<li itemID="e">echo</li>
+	<li itemID="f">foxtrot</li>
+	<li itemID="g">golf</li>
+	<li itemID="h">hotel</li>
+	<li itemID="i">india</li>
+	<li itemID="j">juliet</li>
+	<li itemID="k">kilo</li>
+	<li itemID="l">lima</li>
+	<li itemID="m">mike</li>
+	<li itemID="n">november</li>
+	<li itemID="o">oscar</li>
+	<li itemID="p">papa</li>
+	<li itemID="q">quebec</li>
+	<li itemID="r">romeo</li>
+	<li itemID="s">sierra</li>
+	<li itemID="t">tango</li>
+	<li itemID="u">uniform</li>
+	<li itemID="v">victor</li>
+	<li itemID="w">whiskey</li>
+	<li itemID="x">xray</li>
+	<li itemID="y">yankee</li>
+	<li itemID="z">zulu</li>
+</ul>
+
+<p><input type="button" value="Enviar" onclick="junkdrawer.inspectListOrder('lista')"/></p>
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+
+<style>
+// #sortable0, #sortable1, #sortable2, #sortable3 { list-style-type: none; margin: 0; padding: 0 0 2.5em; float: left; margin-right: 10px; }
+// #sortable0 li, #sortable1 li, #sortable2 li, #sortable3 li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; width: 120px; }
+</style>
+
+
+<script>
+$(function() {
+$( "#sortable0, #sortable1, #sortable2, #sortable3" ).sortable({
+	items: "li:not(.ui-state-disabled)",
+	connectWith: ".connectedSortable"
+}).disableSelection();
+});
+
+
+function posicao1(num){
+setTimeout("abrePosicao('"+ num +"','1')",500);
+}
+
+function posicao2(num){
+setTimeout("abrePosicao('"+ num +"','2')",1000);
+}
+
+function abrePosicao(num,div) {
+var ids = $( "#sortable"+ num ).sortable( "toArray" );
+document.getElementById("divPosicao"+ div).innerHTML = ids;
+}
+</script>
+
+
+</head>
+<body>
+
+
+<table cellpadding="0" cellspacing="0" width="700" height="300" border=1>
+<tr><td onmouseup="posicao2('0')">
+
+<ul id="sortable0" class="connectedSortable" onmouseup="posicao1('0')">
+    <li class="ui-state-default ui-state-disabled" id="0_1">Item 1</li>
+    <li class="ui-state-default" id="0_2">Item 2</li>
+    <li class="ui-state-default" id="0_3">Item 3</li>
+    <li class="ui-state-default" id="0_4">Item 4</li>
+    <li class="ui-state-default" id="0_5">Item 5</li>
+</ul>
+
+</td><td onmouseup="posicao2('1')">
+
+<ul id="sortable1" class="connectedSortable" onmouseup="posicao1('1')">
+    <li class="ui-state-highlight" id="1_1">Item 1</li>
+    <li class="ui-state-highlight" id="1_2">Item 2</li>
+    <li class="ui-state-highlight" id="1_3">Item 3</li>
+    <li class="ui-state-highlight" id="1_4">Item 4</li>
+    <li class="ui-state-highlight" id="1_5">Item 5</li>
+</ul>
+
+</td><td onmouseup="posicao2('2')">
+
+<ul id="sortable2" class="connectedSortable" onmouseup="posicao1('2')">
+    <li class="ui-state-highlight" id="2_1">Item 1</li>
+    <li class="ui-state-highlight" id="2_2">Item 2</li>
+    <li class="ui-state-highlight" id="2_3">Item 3</li>
+    <li class="ui-state-highlight" id="2_4">Item 4</li>
+    <li class="ui-state-highlight" id="2_5">Item 5</li>
+</ul>
+
+</td><td onmouseup="posicao2('3')">
+
+<ul id="sortable3" class="connectedSortable" onmouseup="posicao1('3')">
+    <li class="ui-state-highlight" id="3_1">Item 1</li>
+    <li class="ui-state-highlight" id="3_2">Item 2</li>
+    <li class="ui-state-highlight" id="3_3">Item 3</li>
+    <li class="ui-state-highlight" id="3_4">Item 4</li>
+    <li class="ui-state-highlight" id="3_5">Item 5</li>
+</ul>
+
+</td></tr>
+</table>
+
+
+DIV1 = <div id="divPosicao1"></div><br />
+DIV2 = <div id="divPosicao2"></div>
+
+ 
+</body>
+</html>

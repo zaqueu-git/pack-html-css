@@ -1,0 +1,110 @@
+.jcarousel-wrapper {
+    position: relative;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+}
+
+.jcarousel ul {
+    width: 10000em;
+    height: 100%;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: auto;
+    height: 100%;
+    float: left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 80px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 60px Arial, sans-serif;
+}
+
+.jcarousel-control-prev {
+    left: 15px;
+}
+
+.jcarousel-control-next {
+    right: 15px;
+}
+
+/** Carousel Pagination **/
+
+.jcarousel-pagination {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 19px;
+    text-decoration: none;
+    font: 20px Arial, sans-serif;
+    margin: -60px 0px 0px 0px;
+}
+
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    text-indent: -9999px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.jcarousel-pagination a.active {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    opacity: 1;
+}
+
+.jcarousel-scrool {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.jcarousel-scrool a {
+    margin-top: -46px;
+    position: absolute;
+    text-decoration: none;
+    display: inline-block;
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #ffffff;
+}

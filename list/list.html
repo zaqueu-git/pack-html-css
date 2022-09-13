@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="list">
+        <div class="line_head">
+            <div class="col_head col_01">#</div>
+            <div class="col_head col_02">NOME</div>
+            <div class="col_head col_03">UNIDADE</div>
+            <div class="col_head col_04">AÇÕES</div>
+        </div>
+        <div class="line_body">
+            <div class="col_body col_01">1</div>
+            <div class="col_body col_02">Nome de teste 1</div>
+            <div class="col_body col_03">Unidade de teste 1</div>
+            <div class="col_body col_04">---</div>
+        </div>
+        <div class="line_body">
+            <div class="col_body col_01">2</div>
+            <div class="col_body col_02">Nome de teste 2</div>
+            <div class="col_body col_03">Unidade de teste 2</div>
+            <div class="col_body col_04">---</div>
+        </div>
+        <div class="line_body">
+            <div class="col_body col_01">3</div>
+            <div class="col_body col_02">Nome de teste 3</div>
+            <div class="col_body col_03">Unidade de teste 3</div>
+            <div class="col_body col_04">---</div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<style>
+/*-- CSS BASE --*/
+#list {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000000;
+}
+
+#list .line_head {
+    display: flex;
+}
+
+#list .col_head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 40px;
+    padding: 0px 10px;
+    background-color: #000000;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+#list .line_body {
+    display: flex;
+}
+
+#list .line_body:nth-child(odd) {
+    background-color:#ffffff;
+}
+
+#list .line_body:nth-child(even) {
+    background-color: #cccccc;
+}
+
+#list .col_body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 40px;
+    padding: 0px 10px;
+}
+
+/*-- CSS PERSONALIZADO --*/
+
+#list .col_01 {
+    width: 50px;
+    justify-content: center;
+}
+
+#list .col_02 {
+    width: 50%;
+}
+
+#list .col_03 {
+    width: 50%;
+}
+
+#list .col_04 {
+    width: 120px;
+    justify-content: center;
+}
+</style>
